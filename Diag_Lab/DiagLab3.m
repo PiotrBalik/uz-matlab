@@ -42,14 +42,18 @@ end
 
 Ts1=czas(2)-czas(1); % 100 [Hz] probkowanie domyslne
 %% Zmiana typu danych
-zbi1 = [zb1; zb2; zb3];
-zbi2 = [zb4; zb5; zb6];
+% transpozycje ze wzgl na rozmiary
+zbi1 = [zb1; zb2; zb3]';
+zbi2 = [zb4; zb5; zb6]';
 
 zbt1 = tonndata(zbi1,false,false);
 zbt2 = tonndata(zbi2,false,false);
 
 int1 = tonndata(in1,false,false);
 int2 = tonndata(in2,false,false);
+
+in1=in1';
+in2=in2';
 
 bledy=zeros(3,4);
 %% Trening o parametrach domyslnych
